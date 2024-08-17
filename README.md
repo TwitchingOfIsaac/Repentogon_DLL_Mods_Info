@@ -6,6 +6,8 @@ While you can continue to create Lua-based mods for The Binding of Isaac, REPENT
 
 This repo will provide various examples, showcasing different things you can do with DLL mods.
 
+__Note__: _This repo is not meant to teach you how to use C++ nor using lua C++ bindings. I also want to point out that I am not an expert in C++ nor lua C++ bindings - the last time I worked in a C language was well over a decade ago._
+
 ## Prerequisites
 To ensure that the build scripts work properly, you will need to have a local development environment set up for REPENTOGON and have completed a successful build. You can follow the [REPENTOGON build steps](https://github.com/TeamREPENTOGON/REPENTOGON?tab=readme-ov-file#building).
 
@@ -37,4 +39,5 @@ Just like the REPENTOGON build process, these mods will utilize CMake 3.1.3+.
 ## Mods
 1. [Basic Scaffolding Mod](01_mod_scaffolding): Basic scaffolding of a DLL mod, that will set a variable in Lua
    that can be checked for.
-2. [Lua Function Mod](02_lua_function): This mod adds a global HelloWorld() function in Lua the prints to the console.
+2. [Lua Function Mod](02_lua_function): Adds a global HelloWorld() function in Lua the prints to the console.
+3. [Static Class Mod](03_static_class): Introduces a static class with methods on it that are usable in Lua.

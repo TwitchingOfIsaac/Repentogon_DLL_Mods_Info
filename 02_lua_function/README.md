@@ -8,8 +8,18 @@ In this mod, we will be introducing a Lua global function, that will print outpu
 #include "IsaacRepentance.h"
 #include "HookSystem.h"
 
+enum Colors : unsigned int
+{
+	Green = 4278222848U,
+	Red = 4294901760U,
+	Yellow = 4294967040U,
+};
+
 LUA_FUNCTION(Lua_Hello_World) {
 	g_Game->GetConsole()->Print("Hello World!\n", Console::Color::WHITE, 0x96U);
+	g_Game->GetConsole()->Print("Hello World!\n", Colors::Green, 0x96U);
+	g_Game->GetConsole()->Print("Hello World!\n", Colors::Red, 0x96U);
+	g_Game->GetConsole()->Print("Hello World!\n", Colors::Yellow, 0x96U);
 	return 0;
 }
 
@@ -36,6 +46,8 @@ The contents of the the LUA_FUNCTION is pretty straight-forward. We first grab t
 The `return 0;` is important to note. When a Lua function returns, the results are pushed onto the stack in direct order, with the last result being on top after the call. The return integer used in LUA_FUNCTION is specifying the number of returned elements on the stack - in this case, we are not returning anything, since nothing was pushed on to the stack. In the 03. Static Class example mod we will introduce returning data from a LUA_FUNCTION.
 
 Finally, in our HOOK_METHOD, we are pushing the C Function name of the LUA_FUNCTION to the stack, and then, just like the first DLL example, we set it as a global. This will now allow "HelloWorld()" to be called from Lua.
+
+As a bonus, we define a couple of additional colors not defined in REPENTOGON and use those as colors to print to the console with.
 
 ## Building
 Follow the standard build process from the root of this repository.
