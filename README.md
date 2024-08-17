@@ -35,6 +35,6 @@ Just like the REPENTOGON build process, these mods will utilize CMake 3.1.3+.
 9. If you did not set **ISAAC_DIRECTORY** in the configuration process, you will find the built DLL file in the build directory, either under Debug or Release, depending on which build option you selected. You can copy that file into your Isaac folder and start The Binding of Isaac with REPENTOGON. Please see the individual mod instructions for further details on testing the mod.
 
 ## Mods
-1. [Basic Scaffolding Mod](/Repentogon_DLL_Mods_Info/tree/main/01_basic_scaffolding): Basic scaffolding of a DLL mod, that will set a variable in Lua
+1. [Basic Scaffolding Mod](../../tree/main/01_basic_scaffolding): Basic scaffolding of a DLL mod, that will set a variable in Lua
    that can be checked for.
-2. [Static Class Mod](/Repentogon_DLL_Mods_Info/tree/main/02_static_class): A DLL mod that adds a static class with methods that can be called within Lua.
+2. [Static Class Mod](../../tree/main/02_static_class): A DLL mod that adds a static class with methods that can be called within Lua.
