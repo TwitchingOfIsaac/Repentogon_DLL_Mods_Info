@@ -1,0 +1,3 @@
+[submodule "examples/02_add_luasocket/lib/luasocket"]
+	path = examples/02_add_luasocket/lib/luasocket
+	url = https://github.com/lunarmodules/luasocket.git
