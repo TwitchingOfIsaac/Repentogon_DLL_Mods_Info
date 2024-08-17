@@ -1,4 +1,3 @@
-#include <fstream>
 #include <lua.hpp>
 #include <string>
 #include <algorithm>
@@ -8,13 +7,6 @@
 #include "LuaCore.h"
 #include "IsaacRepentance.h"
 #include "HookSystem.h"
-#include "mod.h"
-
-using namespace std;
-
-extern "C" __declspec(dllexport) int ModInit(int argc, char** argv) {
-    return 0;
-}
 
 // ToUpper function
 LUA_FUNCTION(Lua_String_ToUpper) {
@@ -220,6 +212,29 @@ LUA_FUNCTION(Lua_String_Truncate) {
     return 1;
 }
 
+// Split function
+LUA_FUNCTION(Lua_String_Split) {
+    std::string str = luaL_checkstring(L, 1);
+    std::string delimiter = luaL_checkstring(L, 2);
+
+    lua_newtable(L);
+    size_t pos = 0;
+    int index = 1;
+
+    while ((pos = str.find(delimiter)) != std::string::npos) {
+        std::string token = str.substr(0, pos);
+        lua_pushstring(L, token.c_str());
+        lua_rawseti(L, -2, index++);
+        str.erase(0, pos + delimiter.length());
+    }
+
+    lua_pushstring(L, str.c_str());
+    lua_rawseti(L, -2, index);
+
+    return 1;
+}
+
+
 // RegisterClasses hook
 HOOK_METHOD(LuaEngine, RegisterClasses, () -> void) {
     super();
@@ -243,6 +258,7 @@ HOOK_METHOD(LuaEngine, RegisterClasses, () -> void) {
     lua::TableAssoc(L, "IsPalindrome", Lua_String_IsPalindrome);
     lua::TableAssoc(L, "WordCount", Lua_String_WordCount);
     lua::TableAssoc(L, "Truncate", Lua_String_Truncate);
+    lua::TableAssoc(L, "Split", Lua_String_Split);
 
     lua_setglobal(L, "Strings");
 }

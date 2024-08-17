@@ -49,6 +49,6 @@ target_compile_options(${zhlModName} PUBLIC "/MD")
 
 if(NOT ISAAC_DIRECTORY STREQUAL "")
     message (STATUS "Files will be installed to " ${ISAAC_DIRECTORY})
-    add_custom_command(TARGET ${zhlModName} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy "$<TARGET_FILE_DIR:${zhlModName}>/${zhlModName}.dll" "${ISAAC_DIRECTORY")
+    add_custom_command(TARGET ${zhlModName} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy "$<TARGET_FILE_DIR:${zhlModName}>/${zhlModName}.dll" "${ISAAC_DIRECTORY}")
 endif()
 
