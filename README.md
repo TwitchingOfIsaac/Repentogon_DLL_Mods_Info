@@ -37,4 +37,4 @@ Just like the REPENTOGON build process, these mods will utilize CMake 3.1.3+.
 ## Mods
 1. [Basic Scaffolding Mod](01_mod_scaffolding): Basic scaffolding of a DLL mod, that will set a variable in Lua
    that can be checked for.
-2. [Static Class Mod](02_static_class): A DLL mod that adds a static class with methods that can be called within Lua.
+2. [Lua Function Mod](02_lua_function): This mod adds a global HelloWorld() function in Lua the prints to the console.
