@@ -1,4 +1,4 @@
-## 1. Mod Scaffolding
+# 1. Mod Scaffolding
 This first DLL example demonstrates creating a simple DLL mod for [REPENTOGON](https://repentogon.com/). In this example, we register a boolean variable that will be available in Lua.
 
 ## Code Overview
@@ -21,7 +21,7 @@ HOOK_METHOD(LuaEngine, RegisterClasses, () -> void) {
 
 We start with the minimum necessary includes required to make the mod work. After that, we use HOOK_METHOD to add a custom boolean variable named _EXAMPLE_MOD_LOADED into Lua.
 
-#### HOOK_METHOD
+### HOOK_METHOD
 HOOK_METHOD is a method provided by REPENTOGON to hook into various systems within The Binding of Isaac. Conceptually, it is similar to the ModCallback system available for modding in TBOI Lua, but it offers deeper integration into the underlying system than you can achieve with Lua alone.
 
 The definition for this method is: HOOK_METHOD(_classname, _name, _type)
