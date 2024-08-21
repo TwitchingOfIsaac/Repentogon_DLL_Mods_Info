@@ -42,8 +42,7 @@ target_include_directories(${zhlModName} PUBLIC ${REPENTOGON_SRC}/include "${REP
     "${REPENTOGON_SRC}/libs/LuaBridge/Source/LuaBridge" 
     "${REPENTOGON_SRC}/libzhl" "${REPENTOGON_SRC}/libs/imgui" 
     "${REPENTOGON_SRC}/libs/imgui/misc/freetype" "${REPENTOGON_SRC}/libs/imgui/backends" 
-    "${REPENTOGON_SRC}/libs/NaturalSort" "${REPENTOGON_SRC}/libs/glad/include" "${REPENTOGON_SRC}/libs/mINI/src/mini"
-    "${REPENTOGON_SRC}/libs/luasocket")
+    "${REPENTOGON_SRC}/libs/NaturalSort" "${REPENTOGON_SRC}/libs/glad/include" "${REPENTOGON_SRC}/libs/mINI/src/mini")
 target_link_libraries(${zhlModName} ${LUA_LIB} ${LIBZHL_LIB})
 target_compile_options(${zhlModName} PUBLIC "/MD")
 
