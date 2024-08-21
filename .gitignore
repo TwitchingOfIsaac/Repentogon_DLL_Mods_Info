@@ -1,3 +1,4 @@
 build
 examples/
-test
+test/
+new_test/

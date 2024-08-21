@@ -1,4 +1,4 @@
-## 2. Static Class
+## 3. Static Class
 In this mod, we will be creating a static `Strings` class with various methods for string manipulation. We will introduce returning values from `LUA_FUNCTION`s.
 
 ## Code Overview
